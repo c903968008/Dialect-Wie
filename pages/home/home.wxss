@@ -1,10 +1,10 @@
 page{
-  background-color: #0C0C0C;
+  background-color: 
 }
 .top{
   margin: 20rpx;
   border-radius: 20rpx;
-  height: 155px;
+  height: 160px;
   position:relative;
   padding-top: 20px; 
 }
@@ -15,6 +15,7 @@ page{
   top: 20rpx;
 }
 .top .info{
+  margin-top: 10px; 
   font-size: 30rpx;
 }
 .top .info .username{
@@ -27,28 +28,42 @@ page{
 }
 
 .model{
-  margin: 15px 20rpx 0px;
-  background-color: white;
+  margin: 30px 20rpx 0px;
   height: 300px;
-}
-.model .nav-title{
-  
 }
 .model .left{
   width: 50%;
 }
 .model .left .answer{
-  width: 70%;
+  width: 80%;
   height: 40%;
   margin: 0 auto;
   position: relative;
 }
 .model .left .question{
-  width: 70%;
+  width: 80%;
   height: 45%;
-  margin: 10px auto;
+  margin: 5% auto 0;
   position: relative;
 }
 .model .right{
   width: 50%;
+}
+.model .right .learn{
+  width: 70%;
+  height: 30%;
+  margin: 0 auto;
+  position: relative;
+}
+.model .right .certificate{
+  width: 70%;
+  height: 20%;
+  margin: 7% auto 0;
+  position: relative;
+}
+.model .right .rank{
+  width: 70%;
+  height: 30%;
+  margin: 6% auto 0;
+  position: relative;
 }

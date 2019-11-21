@@ -17,49 +17,23 @@
 
 <!-- 各个模块 -->
 <view class="model grid col=2 margin-bottom text-center">
-  <view class="{{'bg-cyan'}} left">
+  <view class="left">
     <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange answer">
       <view class="nav-title">答题</view>
     </navigator>
-    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange question">
+    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-cyan question">
       <view class="nav-title">出题</view>
     </navigator>
   </view>
-  <view class="{{'bg-blue'}} right">
-    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange learn">
+  <view class="right">
+    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-olive learn">
       <view class="nav-title">学方言</view>
     </navigator>
-    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange certificate">
+    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-red certificate">
       <view class="nav-title">我的证书</view>
     </navigator>
-    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange rank">
+    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-purple rank">
       <view class="nav-title">排行榜</view>
     </navigator>
   </view>
-
-  <!-- <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange answer">
-    <view class="nav-title">标题</view>
-    <view class="nav-name">name</view>
-  </navigator>
-
-  <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange">
-    <view class="nav-title">标题</view>
-    <view class="nav-name">name</view>
-  </navigator>
-
-  <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange">
-    <view class="nav-title">标题</view>
-    <view class="nav-name">name</view>
-  </navigator>
-
-  <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange">
-    <view class="nav-title">标题</view>
-    <view class="nav-name">name</view>
-  </navigator>
-
-  <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange">
-    <view class="nav-title">标题</view>
-    <view class="nav-name">name</view>
-  </navigator> -->
-  
 </view>
