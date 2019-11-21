@@ -1,0 +1,54 @@
+page{
+  background-color: #0C0C0C;
+}
+.top{
+  margin: 20rpx;
+  border-radius: 20rpx;
+  height: 155px;
+  position:relative;
+  padding-top: 20px; 
+}
+.top .user{
+  font-size: 50rpx;
+  position:absolute;
+  right: 30rpx;
+  top: 20rpx;
+}
+.top .info{
+  font-size: 30rpx;
+}
+.top .info .username{
+  line-height: 50px;
+}
+.top .info .accuracy{
+  margin-bottom: 10px;
+  font-size: 45rpx;
+  color: rgb(104, 218, 104);
+}
+
+.model{
+  margin: 15px 20rpx 0px;
+  background-color: white;
+  height: 300px;
+}
+.model .nav-title{
+  
+}
+.model .left{
+  width: 50%;
+}
+.model .left .answer{
+  width: 70%;
+  height: 40%;
+  margin: 0 auto;
+  position: relative;
+}
+.model .left .question{
+  width: 70%;
+  height: 45%;
+  margin: 10px auto;
+  position: relative;
+}
+.model .right{
+  width: 50%;
+}

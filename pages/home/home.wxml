@@ -1,0 +1,65 @@
+<!-- 用户信息 -->
+<view class="bg-gradual-blue padding radius text-center shadow-blur top grid col-1">
+  <view class="">
+    <view class="cu-avatar xl round margin-left" style="background-image:url(/images/logo.png);"></view>
+    <text class="cuIcon-people lg text-wight user"></text>
+  </view>
+  <view class="grid col-2 info">
+    <view class="padding username">
+      用户名
+    </view>
+    <view class="padding">
+      <view class="accuracy">50%</view>
+      <view class="accuracy-text">正确率</view>
+    </view>
+  </view>
+</view>
+
+<!-- 各个模块 -->
+<view class="model grid col=2 margin-bottom text-center">
+  <view class="{{'bg-cyan'}} left">
+    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange answer">
+      <view class="nav-title">答题</view>
+    </navigator>
+    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange question">
+      <view class="nav-title">出题</view>
+    </navigator>
+  </view>
+  <view class="{{'bg-blue'}} right">
+    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange learn">
+      <view class="nav-title">学方言</view>
+    </navigator>
+    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange certificate">
+      <view class="nav-title">我的证书</view>
+    </navigator>
+    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange rank">
+      <view class="nav-title">排行榜</view>
+    </navigator>
+  </view>
+
+  <!-- <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange answer">
+    <view class="nav-title">标题</view>
+    <view class="nav-name">name</view>
+  </navigator>
+
+  <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange">
+    <view class="nav-title">标题</view>
+    <view class="nav-name">name</view>
+  </navigator>
+
+  <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange">
+    <view class="nav-title">标题</view>
+    <view class="nav-name">name</view>
+  </navigator>
+
+  <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange">
+    <view class="nav-title">标题</view>
+    <view class="nav-name">name</view>
+  </navigator>
+
+  <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange">
+    <view class="nav-title">标题</view>
+    <view class="nav-name">name</view>
+  </navigator> -->
+  
+</view>
