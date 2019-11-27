@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/certificate/certificate",
     "pages/home/home",
     "pages/notice/notice",
     "pages/user/user",
     "pages/index/index",
     "pages/test/test",
     "pages/logs/logs",
-    "pages/certificate/certificate",
     "pages/answer/answer",
     "pages/question/question",
     "pages/set_question/set_question",

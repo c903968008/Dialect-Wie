@@ -5,59 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    iconList: [{
-      icon: 'cardboardfill',
-      color: 'red',
-      badge: 120,
-      name: 'VR'
+    certificate: [{
+      description: '折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
+      image: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
+      name: '方言八级'
     }, {
-      icon: 'recordfill',
-      color: 'orange',
-      badge: 1,
-      name: '录像'
-    }, {
-      icon: 'picfill',
-      color: 'yellow',
-      badge: 0,
-      name: '图像'
-    }, {
-      icon: 'noticefill',
-      color: 'olive',
-      badge: 22,
-      name: '通知'
-    }, {
-      icon: 'upstagefill',
-      color: 'cyan',
-      badge: 0,
-      name: '排行榜'
-    }, {
-      icon: 'clothesfill',
-      color: 'blue',
-      badge: 0,
-      name: '皮肤'
-    }, {
-      icon: 'discoverfill',
-      color: 'purple',
-      badge: 0,
-      name: '发现'
-    }, {
-      icon: 'questionfill',
-      color: 'mauve',
-      badge: 0,
-      name: '帮助'
-    }, {
-      icon: 'commandfill',
-      color: 'purple',
-      badge: 0,
-      name: '问答'
-    }, {
-      icon: 'brandfill',
-      color: 'mauve',
-      badge: 0,
-      name: '版权'
-    }],
-    gridCol: 3,
-    skin: false
+        description: '折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
+        image: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
+        name: '方言八级'
+      }, {
+        description: '折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
+        image: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
+        name: '方言八级'
+      }, {
+        description: '折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
+        image: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
+        name: '方言八级'
+      }],
   },
 
   /**

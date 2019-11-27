@@ -23,6 +23,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options){
+    console.log(options.type)
     let list = [];
     for (let i = 0; i < 26; i++) {
       list[i] = String.fromCharCode(65 + i)
@@ -33,7 +34,7 @@ Page({
         [{ id: 1, name: 'aa' }, { id: 2, name: 'ab' }],
         [{ id: 3, name: 'bb' }, { id: 4, name: 'ba' }],
       ],
-      hidden: [true,true,false,false]
+      type: options.type
     })
   },
 
