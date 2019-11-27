@@ -1,5 +1,5 @@
 page{
-  background-color: 
+  /* background-color:  */
 }
 .top{
   margin: 20rpx;
@@ -8,7 +8,16 @@ page{
   position:relative;
   padding-top: 20px; 
 }
+.top button{
+  width: 230rpx;
+}
 .top .user{
+  font-size: 50rpx;
+  position:absolute;
+  left: 30rpx;
+  top: 20rpx;
+}
+.top .notice{
   font-size: 50rpx;
   position:absolute;
   right: 30rpx;
@@ -24,7 +33,7 @@ page{
 .top .info .accuracy{
   margin-bottom: 10px;
   font-size: 45rpx;
-  color: rgb(104, 218, 104);
+  color: rgb(90, 238, 157);
 }
 
 .model{

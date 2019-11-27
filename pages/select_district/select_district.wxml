@@ -1,0 +1,27 @@
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round padding-left-lg">
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <text class="cuIcon-search" bindtap="search"></text>
+  </view>
+</view>
+
+<scroll-view scroll-y class="indexes" scroll-into-view="indexes-{{listCurID}}" style="height:calc(100vh - {{CustomBar}}px - 50px)" scroll-with-animation="true" enable-back-to-top="true">
+  <block wx:for="{{list}}" wx:for-index="listId" wx:key>
+    <view class="padding indexItem-{{list[listId]}}" id="indexes-{{list[listId]}}" data-index="{{list[listId]}}">
+      {{list[listId]}}
+    </view>
+    <view class="cu-list bg-white district-list padding-top padding-left">
+      <view class="cu-item">
+        <block wx:for="{{district}}" wx:for-index="districtId" wx:key>
+          <view wx:if="{{listId == districtId}}">
+            <block wx:for="{{district[districtId]}}" wx:for-index="disId" wx:key>
+              <view class="cu-tag round margin-bottom" bindtap="select" data-index="{{district[districtId][disId].id}}">{{district[districtId][disId].name}}</view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</scroll-view>

@@ -1,6 +1,19 @@
 //app.js
 App({
   onLaunch: function () {
+    wx.getSystemInfo({
+      success: e => {
+        this.globalData.StatusBar = e.statusBarHeight;
+        let capsule = wx.getMenuButtonBoundingClientRect();
+        if (capsule) {
+          this.globalData.Custom = capsule;
+          this.globalData.CustomBar = capsule.bottom + capsule.top - e.statusBarHeight;
+        } else {
+          this.globalData.CustomBar = e.statusBarHeight + 50;
+        }
+      }
+    })
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -10,6 +23,36 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // console.log(res);
+        if(res.code){
+          wx.getUserInfo({
+            success: data => {
+              // console.log(data)
+              wx.request({
+                url: 'http://8.8.8.3:8089/login',
+                data: {
+                  "code": res.code,
+                  "rawData": data.rawData,
+                  "signature": data.signature,
+                  'iv': data.iv,
+                  'encryptedData': data.encryptedData,
+                },
+                method: 'GET',
+                success: info => {
+                  // console.log(info)
+                  this.globalData.userInfo = info.data.data.userInfo
+                  // console.log(this.globalData.userInfo);
+                },
+              })
+            }
+          })
+        } else{
+          wx.showToast({
+            title: '登陆失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
       }
     })
     // 获取用户信息

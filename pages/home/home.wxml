@@ -1,15 +1,19 @@
 <!-- 用户信息 -->
 <view class="bg-gradual-blue padding radius text-center shadow-blur top grid col-1">
   <view class="">
-    <view class="cu-avatar xl round margin-left" style="background-image:url(/images/logo.png);"></view>
-    <text class="cuIcon-people lg text-wight user"></text>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="cu-btn round bg-gray shadow">登录</button>
+    <block wx:else>
+      <view class="cu-avatar xl round margin-left" style="background-image:url({{userInfo.avatarUrl ? userInfo.avatarUrl : '/images/avatar.jpg'}});"></view>
+    </block>
+    <text class="cuIcon-people lg text-wight user" bindtap="toUser"></text>
+    <text class="cuIcon-notice lg text-wight notice" bindtap="toNotice"></text>
   </view>
   <view class="grid col-2 info">
     <view class="padding username">
-      用户名
+     {{userInfo.nickName}}
     </view>
     <view class="padding">
-      <view class="accuracy">50%</view>
+      <view class="accuracy text-shadow">50%</view>
       <view class="accuracy-text">正确率</view>
     </view>
   </view>
@@ -18,10 +22,10 @@
 <!-- 各个模块 -->
 <view class="model grid col=2 margin-bottom text-center">
   <view class="left">
-    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-orange answer">
+    <navigator open-type="navigate" hover-class='none' url="/pages/select_district/select_district" class="nav-li bg-orange answer">
       <view class="nav-title">答题</view>
     </navigator>
-    <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-cyan question">
+    <navigator open-type="navigate" hover-class='none' url="/pages/set_question/set_question" class="nav-li bg-cyan question">
       <view class="nav-title">出题</view>
     </navigator>
   </view>

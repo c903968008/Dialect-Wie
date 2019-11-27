@@ -1,0 +1,29 @@
+<image src="/images/answer.png" mode="aspectFit"></image>
+<view class="cu-card article">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="cuIcon-playfill text-green play"></view>
+      <view class="cu-progress round xs striped active progress">
+        <view class="bg-orange" style="width:60%"></view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="grid col-1 margin-bottom margin-left-xl text-left">
+        <view class="margin-top-xs">
+          <view class="cu-tag bg-red light sm round">初级</view>
+          <view class="cu-tag bg-green light sm round">四川</view>
+        </view>
+        <view class="text-lg padding-xs answer margin-top-xs">A. 方言一</view>
+        <view class="text-lg padding-xs answer">B. 方言一</view>
+        <view class="text-lg padding-xs answer">C. 方言一</view>
+        <view class="text-lg padding-xs answer">D. 方言一</view>
+        
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-bar btn-group">
+  <button class="cu-btn bg-green shadow-blur round">上一题</button>
+  <button class="cu-btn bg-blue shadow-blur round">下一题</button>
+</view>

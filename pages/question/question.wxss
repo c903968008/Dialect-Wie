@@ -1,0 +1,9 @@
+.play{
+  font-size: 45rpx;
+  padding: 0 50rpx 0;
+  float: left;
+
+}
+.progress{
+  width: 350rpx;
+}

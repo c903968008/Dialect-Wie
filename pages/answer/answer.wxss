@@ -1,0 +1,17 @@
+.play{
+  font-size: 45rpx;
+  padding: 0 50rpx 0;
+  float: left;
+
+}
+.progress{
+  width: 350rpx;
+}
+image{
+  width: 10%;
+  height: 40px;
+  display: inline;
+  position: absolute;
+  top: 20rpx;
+  right: 50rpx;
+}
