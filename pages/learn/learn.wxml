@@ -1,2 +1,15 @@
-<!--pages/learn/learn.wxml-->
-<text>pages/learn/learn.wxml</text>
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round padding-left-lg">
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <text class="cuIcon-search" bindtap="search"></text>
+  </view>
+</view>
+
+<view class="cu-list grid col-{{gridCol}} no-border">
+  <view class="cu-item" wx:for="{{iconList}}" wx:key>
+    <view class="cuIcon-notification text-{{item.color}}"></view>
+    <text>{{item.name}}</text>
+  </view>
+</view>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/learn/learn",
     
     "pages/home/home",
     "pages/notice/notice",
@@ -10,11 +11,10 @@
     "pages/test/test",
     "pages/logs/logs",
     
-    "pages/question/question",
+    "pages/my_question/question",
     "pages/set_question/set_question",
-    "pages/certificate/certificate",
-    "pages/select_district/select_district",
-    "pages/learn/learn"
+    "pages/my_certificate/certificate",
+    "pages/select_district/select_district"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -23,13 +23,13 @@
   </view>
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
     <view class="cu-item arrow">
-      <navigator class="content" url="/pages/question/question" hover-class="none">
+      <navigator class="content" url="/pages/my_question/question" hover-class="none">
         <text class="cuIcon-hotfill text-red"></text>
         <text class="text-grey">我的题</text>
       </navigator>
     </view>
     <view class="cu-item arrow">
-      <navigator class="content" url="/pages/certificate/certificate" hover-class="none">
+      <navigator class="content" url="/pages/my_certificate/certificate" hover-class="none">
         <text class="cuIcon-selectionfill text-red"></text>
         <text class="text-grey">我的证书</text>
       </navigator>
