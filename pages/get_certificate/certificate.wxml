@@ -1,0 +1,16 @@
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round padding-left-lg">
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <text class="cuIcon-search" bindtap="search"></text>
+  </view>
+</view>
+
+<view class="cu-card">
+  <view class="cu-item shadow text-center padding">
+    <view class="name text-xxl text-green text-shadow text-bold">四川话八级</view>
+    <view class="description text-left text-df margin">杭州话原则上指吴语太湖片杭州小片方言，杭州话使用的范围不大，主要分布在杭州老城区及附近，具有吴语的一般特征，完整地保留中古全浊声母和入声，保留较多古汉语用字用语。</view>
+    <button class="cu-btn bg-gradual-green round shadow text-lg" style="width:300rpx;">开始考证</button>
+  </view>
+</view>

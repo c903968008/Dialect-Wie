@@ -1,0 +1,31 @@
+<scroll-view scroll-x class="bg-brown nav text-center light">
+  <view class="cu-item {{index==TabCur?'text-brown cur':''}}" wx:for="{{tab}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+   {{item}}
+  </view>
+</scroll-view>
+
+<view>
+  <image class="banner" src="/images/banner.png" mode="scaleToFill"></image>
+  <text class="text-white text-lg img-text">你与大神的差距有多少？快快来围观~</text>
+</view>
+
+  <view class="cu-card table">
+    <view class="cu-item shadow-blur item">
+      <scroll-view scroll-y="true" style="height: 350px;">
+        <block wx:for="{{listData}}" wx:key="{{code}}">
+          <view class="flex p-xs mb-sm info">
+            <view class="flex-sub margin-xs text-orange text-center flex-item">1</view>
+            <view class="flex-treble margin-xs flex-item ">
+              <view class="cu-avatar round avatar margin-right" style="background-image:url(/images/avatar.jpg);"></view>用户名
+            </view>
+            <view class="flex-twice margin-xs text-center flex-item">100%</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    
+    <view class="myrank text-center text-red">我的排名： 1000名</view> 
+  </view>
+
+
+

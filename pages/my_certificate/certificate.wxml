@@ -5,7 +5,7 @@
       <view class="text-cut">{{item.name}}</view>
     </view>
     <view class="content">
-      <image src="{{item.image}}" mode="aspectFill"></image>
+      <image src="{{item.image}}" mode="aspectFit"></image>
       <view class="desc">
         <view class="text-content">{{item.description}}</view>
       </view>

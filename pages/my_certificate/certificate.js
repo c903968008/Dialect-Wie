@@ -7,7 +7,7 @@ Page({
   data: {
     certificate: [{
       description: '折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
-      image: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
+      image: '/images/cer.png',
       name: '方言八级'
     }, {
         description: '折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
