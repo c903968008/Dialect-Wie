@@ -14,9 +14,20 @@ Page({
 
   },
 
+  //点击地址跳转
   select(e) {
-    let id = e.target.dataset;
-    console.log(e.target.dataset)
+    let id = e.target.dataset.index;
+    // console.log(e.target.dataset)
+    if(this.data.type == 'answer'){
+      wx.navigateTo({
+        url: '/pages/answer/answer',
+      })
+    } else if (this.data.type == 'learn'){
+      wx.navigateTo({
+        url: '/pages/learn/learn',
+      })
+    }
+    
   },
 
   /**

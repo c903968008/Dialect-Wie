@@ -9,11 +9,12 @@
     </view>
     <view class="content">
       <view class="grid col-1 margin-bottom margin-left-xl text-left">
-        <view class="margin-top-xs">
+        <view class="margin-xs">
           <view class="cu-tag bg-red light sm round">初级</view>
           <view class="cu-tag bg-green light sm round">四川</view>
         </view>
-        <view class="text-lg padding-xs answer margin-top-xs">A. 方言一</view>
+        <!-- 如果答错标红，如果答对标绿 -->
+        <view class="text-lg padding-xs answer">A. 方言一</view>
         <view class="text-lg padding-xs answer">B. 方言一</view>
         <view class="text-lg padding-xs answer">C. 方言一</view>
         <view class="text-lg padding-xs answer">D. 方言一</view>
@@ -26,4 +27,14 @@
 <view class="cu-bar btn-group">
   <button class="cu-btn bg-green shadow-blur round">上一题</button>
   <button class="cu-btn bg-blue shadow-blur round">下一题</button>
+</view>
+
+<view class="cu-bar foot flex bg-white">
+  <view class="action flex-sub">
+    <view class="cuIcon-appreciatefill margin-right" style="color:{{isGood}}"></view>点赞
+  </view>
+  <view class="action flex-sub">
+    <view class="cuIcon-roundclose margin-right"></view>纠错
+  </view>
+
 </view>

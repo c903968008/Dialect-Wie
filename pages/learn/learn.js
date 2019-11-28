@@ -1,11 +1,11 @@
-// pages/answer/answer.js
+// pages/learn/learn.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isGood: 'gray',
+
   },
 
   /**

@@ -1,21 +1,25 @@
 {
   "pages": [
-    "pages/certificate/certificate",
+    
     "pages/home/home",
     "pages/notice/notice",
     "pages/user/user",
+    "pages/answer/answer",
+
     "pages/index/index",
     "pages/test/test",
     "pages/logs/logs",
-    "pages/answer/answer",
+    
     "pages/question/question",
     "pages/set_question/set_question",
-    "pages/select_district/select_district"
+    "pages/certificate/certificate",
+    "pages/select_district/select_district",
+    "pages/learn/learn"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#089BF3",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "论方言",
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {

@@ -22,7 +22,7 @@
 <!-- 各个模块 -->
 <view class="model grid col=2 margin-bottom text-center">
   <view class="left">
-    <navigator open-type="navigate" hover-class='none' url="/pages/select_district/select_district?type='answer'" class="nav-li bg-orange answer">
+    <navigator open-type="navigate" hover-class='none' url="/pages/select_district/select_district?type=answer" class="nav-li bg-orange answer">
       <view class="nav-title">答题</view>
     </navigator>
     <navigator open-type="navigate" hover-class='none' url="/pages/set_question/set_question" class="nav-li bg-cyan question">
@@ -30,7 +30,7 @@
     </navigator>
   </view>
   <view class="right">
-    <navigator open-type="navigate" hover-class='none' url="/pages/select_district/select_district?type='learn" class="nav-li bg-olive learn">
+    <navigator open-type="navigate" hover-class='none' url="/pages/select_district/select_district?type=learn" class="nav-li bg-olive learn">
       <view class="nav-title">学方言</view>
     </navigator>
     <navigator open-type="navigate" hover-class='none' url="/pages/index/index" class="nav-li bg-red certificate">
