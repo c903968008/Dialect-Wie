@@ -1,0 +1,13 @@
+<view class="content">
+  <view class="cu-card">
+    <view class="cu-item padding">
+      <view class="title text-lg">tip: textarea 的 blur 事件会晚于页面上的 tap 事件，如果需要在 button 的点击事件获取 textarea，可以使用 form 的 bindsubmit。
+tip: 不建议在多行文本上对用户的输入进行修改，所以 textarea 的 bindinput 处理函数并不会将返回值反映到 textarea 上。
+tip : 键盘高度发生变化，keyboardheightchange事件可能会多次触发，开发者对于相同的height值应该忽略掉
+bug: 微信版本 6.3.30，textarea 在列表渲染时，新增加的 textarea 在自动聚焦时的位置计算错误。
+示例代码</view>
+      <view class="bg-green light padding-xs margin-xs text-center round shadow shadow-warp btn text-xs" bindtap="toDetail">查看</view>
+    </view>
+  </view>
+
+</view>

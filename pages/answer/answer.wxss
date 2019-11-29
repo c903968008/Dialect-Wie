@@ -15,3 +15,10 @@ image{
   top: 20rpx;
   right: 50rpx;
 }
+.submit{
+  width:100rpx;
+  margin-left: 620rpx;
+}
+.feedback-card{
+  margin-top: 40px;
+}

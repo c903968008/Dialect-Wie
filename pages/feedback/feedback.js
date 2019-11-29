@@ -1,40 +1,17 @@
-// pages/answer/answer.js
+// pages/feedback/feedback.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isGood: 'gray',
-    hidden: true,
-  },
-
-  //反馈
-  feedback() {
-    if(this.data.hidden){
-      this.setData({
-        hidden: false
-      })
-    } else {
-      this.setData({
-        hidden: true
-      })
+    question:{
+      dialect: "你好",
+      difficult: "初级",
+      district: "四川",
+      wrong: ["吃饭", "睡觉", "打痘痘"]
     }
-    
   },
-
-  //点赞
-  good() {
-    if(this.data.isGood == 'gray'){
-      this.setData({
-        isGood: 'green'
-      })
-    } else{
-      this.setData({
-        isGood: 'gray'
-      })
-    }
-  } ,
 
   /**
    * 生命周期函数--监听页面加载

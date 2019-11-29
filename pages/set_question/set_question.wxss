@@ -3,15 +3,15 @@
 }
 .audit button{
   background: rgb(241, 239, 239);
-  width: 600rpx;
+  width: 500rpx;
   margin: 5px;
   font-size: 30rpx;
   font-weight: normal;
   letter-spacing: 20rpx;  
 }
-.cu-form-group{
-  border-top: 1rpx solid #eee;
-}
 .submit{
   letter-spacing: 20rpx;  
+}
+.item{
+  padding: 0 20rpx;
 }

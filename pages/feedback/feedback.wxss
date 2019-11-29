@@ -8,6 +8,8 @@
   width: 350rpx;
 }
 .btn{
-  width: 100rpx;
-  margin-left: 550rpx;
+  width: 150rpx;
+  margin-top: 10px;
+  margin-left: 500rpx;
+  letter-spacing: 5px;
 }

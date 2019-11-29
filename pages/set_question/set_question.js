@@ -8,7 +8,8 @@ Page({
   data: {
     region: ['广东省', '广州市', '海珠区'],
     difficult: ['初级','中级','高级'],
-    recordStatus: '按住录音'
+    recordStatus: '按住录音',
+    
   },
 
   RegionChange: function (e) {

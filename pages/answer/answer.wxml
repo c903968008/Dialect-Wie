@@ -25,16 +25,29 @@
 </view>
 
 <view class="cu-bar btn-group">
-  <button class="cu-btn bg-green shadow-blur round">上一题</button>
-  <button class="cu-btn bg-blue shadow-blur round">下一题</button>
+  <button class="cu-btn bg-green light shadow round">上一题</button>
+  <button class="cu-btn bg-blue light shadow round">下一题</button>
+</view>
+
+<view hidden="{{hidden}}">
+  <view class="cu-card feedback-card">
+    <view class="cu-item">
+      <form>
+        <view class="cu-form-group">
+          <textarea maxlength="-1" bindinput="textareaAInput" placeholder="请输入反馈信息" style="height:80px;"></textarea>
+        </view>
+      </form>
+    </view>
+  </view>
+  <view class="padding-xs text-center radius shadow bg-cyan light submit">提交</view>
 </view>
 
 <view class="cu-bar foot flex bg-white">
-  <view class="action flex-sub">
+  <view class="action flex-sub" bindtap="good">
     <view class="cuIcon-appreciatefill margin-right" style="color:{{isGood}}"></view>点赞
   </view>
-  <view class="action flex-sub">
-    <view class="cuIcon-roundclose margin-right"></view>纠错
+  <view class="action flex-sub" bindtap="feedback">
+    <view class="cuIcon-roundclose margin-right"></view>反馈
   </view>
-
+  
 </view>

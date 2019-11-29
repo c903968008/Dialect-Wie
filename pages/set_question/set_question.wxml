@@ -1,52 +1,56 @@
-<!-- <text class="cuIcon-sound text-grey"></text> -->
-<form>
-  <view class="cu-form-group margin-top">
-		<view class="title">地址选择</view>
-		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
-			<view class="picker">
-				{{region[0]}}，{{region[1]}}，{{region[2]}}
-			</view>
-		</picker>
-	</view>
-  <radio-group class="block">
-    <view class="cu-form-group">
-      <view class="title">难度</view>
-      <view>
-        <radio class="green margin-right-sm"></radio>{{difficult[0]}}
-        <radio class="green margin-left-sm margin-right-sm"></radio>{{difficult[1]}}
-        <radio class="green margin-left-sm margin-right-sm"></radio>{{difficult[2]}}
+<view class="cu-card">
+  <view class="cu-item item">
+    <form>
+      <view class="cu-form-group margin-top">
+        <view class="title">地址选择</view>
+        <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{region[0]}}，{{region[1]}}，{{region[2]}}
+          </view>
+        </picker>
       </view>
-    </view>
-  </radio-group>
-	<view class="cu-form-group">
-		<view class="title">正确选项</view>
-		<input placeholder="请输入方言的正确翻译"></input>
-	</view>
-  <view class="cu-form-group">
-		<view class="title">错误选项1</view>
-		<input placeholder="请输入错误选项"></input>
-	</view>
-  <view class="cu-form-group">
-		<view class="title">错误选项2</view>
-		<input placeholder="请输入错误选项"></input>
-	</view>
-  <view class="cu-form-group">
-		<view class="title">错误选项3</view>
-		<input placeholder="请输入错误选项"></input>
-	</view>
-  <view class="cu-form-group">
-    <view class="cu-bar input audit">
-      <view class="action">
-        <text class="cuIcon-sound text-grey"></text>
+      <radio-group class="block">
+        <view class="cu-form-group">
+          <view class="title">难度</view>
+          <view>
+            <radio class="green margin-right-sm" checked="true"></radio>{{difficult[0]}}
+            <radio class="green margin-left-sm margin-right-sm"></radio>{{difficult[1]}}
+            <radio class="green margin-left-sm margin-right-sm"></radio>{{difficult[2]}}
+          </view>
+        </view>
+      </radio-group>
+      <view class="cu-form-group">
+        <view class="title">正确选项</view>
+        <input placeholder="请输入方言的正确翻译"></input>
       </view>
-      <button class="cu-btn bg-gray text-grey"
-bindtouchstart="recordTouchStart" 
-bindtouchend="recordTouchEnd" 
-bindlongpress="recordLongPress">{{recordStatus}}</button>
-    </view>
-  </view>
+      <view class="cu-form-group">
+        <view class="title">错误选项1</view>
+        <input placeholder="请输入错误选项"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">错误选项2</view>
+        <input placeholder="请输入错误选项"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">错误选项3</view>
+        <input placeholder="请输入错误选项"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="cu-bar input audit">
+          <view class="action">
+            <text class="cuIcon-sound text-grey"></text>
+          </view>
+          <button class="cu-btn bg-gray text-grey"
+    bindtouchstart="recordTouchStart" 
+    bindtouchend="recordTouchEnd" 
+    bindlongpress="recordLongPress">{{recordStatus}}</button>
+        </view>
+      </view>
 
+    </form>
+  </view>
+  
   <view class="cu-bar btn-group margin-top-lg">
     <button class="cu-btn bg-green text-lg shadow-blur round submit">提交</button>
   </view>
-</form>
+</view>
