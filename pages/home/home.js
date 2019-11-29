@@ -22,7 +22,7 @@ Page({
   //跳转至活动通知界面
   toNotice: function () {
     wx.navigateTo({
-      url: '/pages/notice/notice',
+      url: '/pages/notice_list/notice',
     })
   },
 

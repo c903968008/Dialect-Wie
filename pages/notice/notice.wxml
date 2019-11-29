@@ -1,15 +1,18 @@
-<block wx:for="{{notice}}" wx:for-item="notice" wx:key>
-<view class="cu-card article">
-  <view class="cu-item shadow">
-      <view class="title">
-        <view class="text-cut">{{notice.title}}</view>
-      </view>
+<view class="cu-card">
+  <view class="cu-item shadow padding">
+      <view class="title text-center text-xl margin-bottom-xs">标题标题</view>
+      <view class="padding-xs time text-sm text-grey text-right">2019年11月29日</view>
       <view class="content">
-        <image src="{{notice.image}}" mode="aspectFill"></image>
+        <image src="/images/BasicsBg.png" mode="aspectFill"></image>
         <view class="desc">
-          <view class="text-content"> {{notice.content}}</view>
+          <view class="text-content">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
         </view>
       </view>
     </view>
   </view>
-  </block>

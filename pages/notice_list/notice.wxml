@@ -1,0 +1,16 @@
+<block wx:for="{{notice}}" wx:for-item="notice" wx:key>
+<view class="cu-card article" bindtap="toDetail">
+  <view class="cu-item shadow">
+      <view class="title">
+        <view class="text-cut">{{notice.title}}</view>
+      </view>
+      <view class="content">
+        <image src="{{notice.image}}" mode="aspectFill"></image>
+        <view class="desc">
+          <view class="text-content"> {{notice.content}}</view>
+          <view class="padding-right-sm time text-xs text-grey text-right"> {{notice.time}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </block>

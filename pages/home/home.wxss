@@ -32,8 +32,8 @@ page{
 }
 .top .info .accuracy{
   margin-bottom: 10px;
-  font-size: 45rpx;
-  color: rgb(90, 238, 157);
+  /* font-size: 45rpx; */
+  /* color: rgb(90, 238, 157); */
 }
 
 .model{

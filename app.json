@@ -1,12 +1,13 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/notice/notice",
+    "pages/notice_list/notice",
+    "pages/my_feedback/feedback",
     "pages/set_question/set_question",
     "pages/my_question/question",
     "pages/feedback/feedback",
-    "pages/my_feedback/feedback",
     "pages/answer/answer",
-    "pages/notice/notice",
     "pages/user/user",
     "pages/learn/learn",
     "pages/index/index",

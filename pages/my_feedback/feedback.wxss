@@ -11,4 +11,5 @@
   width: 100rpx;
   margin-top: 10px;
   margin-left: 500rpx;
+  letter-spacing: 2px;
 }

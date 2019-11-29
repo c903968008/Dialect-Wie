@@ -13,7 +13,7 @@
      {{userInfo.nickName}}
     </view>
     <view class="padding">
-      <view class="accuracy text-shadow">50%</view>
+      <view class="accuracy text-shadow text-yellow"><text class="text-xxl">50</text> %</view>
       <view class="accuracy-text">正确率</view>
     </view>
   </view>
