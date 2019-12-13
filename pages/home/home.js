@@ -26,52 +26,52 @@ Page({
     })
   },
 
-  answer(e) {
-    this.setData({
-      district: [{
-        name: "北京"
-      },{
-        name: "四川"
-      }]
-    })
-  },
-
-  select(e) {
-    console.log(e);
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
+    var that = this;
+    setTimeout(function(){
+      if (app.globalData.userInfo) {
+        that.setData({
+          userInfo: app.globalData.userInfo,
           hasUserInfo: true
         })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
+        console.log('app')
+        console.log(that.data.userInfo);
+      } else if (that.data.canIUse) {
+        // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+        // 所以此处加入 callback 以防止这种情况
+        app.userInfoReadyCallback = res => {
+          console.log(res)
+          res.userInfo.accuracy = 0;
+          console.log('wei')
+          console.log(res.userInfo);
+          that.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
           })
         }
-      })
-    }
+      } else {
+        // 在没有 open-type=getUserInfo 版本的兼容处理
+        console.log('else')
+        wx.getUserInfo({
+          success: res => {
+            app.globalData.userInfo = res.userInfo
+            that.setData({
+              userInfo: res.userInfo,
+              hasUserInfo: true
+            })
+          }
+        })
+      }
+    },1000)
+    
   },
+
   getUserInfo: function (e) {
     console.log(e)
+    e.detail.userInfo.accuracy = 0
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

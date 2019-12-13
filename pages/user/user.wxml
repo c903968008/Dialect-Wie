@@ -2,21 +2,21 @@
   <view class="UCenter-bg">
     <image src="{{userInfo.avatarUrl}}" class="png" mode="widthFix"></image>
     <view class="text-xl margin-top-sm">{{userInfo.nickName}}</view>
-    <image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+    <image src="/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
   </view>
   <view class="padding flex text-center text-grey bg-white shadow-warp">
     <view class="flex flex-sub flex-direction solid-right">
-      <view class="text-xxl text-orange">11</view>
+      <view class="text-xxl text-orange">{{count.answer}}</view>
       <view class="margin-top-sm">
         <text class="cuIcon-creativefill"></text> 答题总数</view>
     </view>
     <view class="flex flex-sub flex-direction solid-right">
-      <view class="text-xxl text-blue">11</view>
+      <view class="text-xxl text-blue">{{count.questin}}</view>
       <view class="margin-top-sm">
         <text class="cuIcon-discoverfill"></text> 出题总数</view>
     </view>
     <view class="flex flex-sub flex-direction">
-      <view class="text-xxl text-green">11</view>
+      <view class="text-xxl text-green">{{count.certificate}}</view>
       <view class="margin-top-sm">
         <text class="cuIcon-selectionfill"></text> 证书总数</view>
     </view>

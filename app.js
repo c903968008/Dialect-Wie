@@ -1,19 +1,7 @@
 //app.js
+import api from '/utils/wxRequest.js';
 App({
   onLaunch: function () {
-    wx.getSystemInfo({
-      success: e => {
-        this.globalData.StatusBar = e.statusBarHeight;
-        let capsule = wx.getMenuButtonBoundingClientRect();
-        if (capsule) {
-          this.globalData.Custom = capsule;
-          this.globalData.CustomBar = capsule.bottom + capsule.top - e.statusBarHeight;
-        } else {
-          this.globalData.CustomBar = e.statusBarHeight + 50;
-        }
-      }
-    })
-
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -27,23 +15,32 @@ App({
         if(res.code){
           wx.getUserInfo({
             success: data => {
-              // console.log(data)
-              wx.request({
-                url: 'http://8.8.8.3:8089/login',
-                data: {
+              let da = {
                   "code": res.code,
                   "rawData": data.rawData,
                   "signature": data.signature,
                   'iv': data.iv,
                   'encryptedData': data.encryptedData,
-                },
-                method: 'GET',
-                success: info => {
+              }
+              api.wxRequest.post('/login',da, info => {
+                if (info.code == 200) {
                   // console.log(info)
-                  this.globalData.userInfo = info.data.data.userInfo
-                  // console.log(this.globalData.userInfo);
-                },
+                  this.globalData.userInfo = info.data.userInfo
+                  wx.setStorage({
+                    key: 'token',
+                    data: info.data.token,
+                  })
+                  // console.log(this.globalData.userInfo)
+                } else {
+                  console.log(info.errMsg)
+                }
+              }, err => {
+                console.log(err)
               })
+
+            },
+            fail: fail => {
+              console.log(fail);
             }
           })
         } else{
@@ -55,6 +52,7 @@ App({
         }
       }
     })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -62,6 +60,7 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              res.userInfo.accuracy = 0
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 
@@ -77,6 +76,6 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
   }
 })

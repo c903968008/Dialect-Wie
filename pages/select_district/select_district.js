@@ -1,5 +1,6 @@
 // pages/select_district/select_district.js
 const app = getApp();
+import api from '../../utils/wxRequest.js';
 Page({
 
   /**
@@ -39,14 +40,32 @@ Page({
     for (let i = 0; i < 26; i++) {
       list[i] = String.fromCharCode(65 + i)
     }
+
+    api.wxRequest.get('/district/list', res => {
+      if (res.code == 200) {
+        console.log(res.data)
+        this.setData({
+          district: res.data,
+        })
+        // console.log(this.data)
+      } else if(res.code == 500){
+        console.log(res.msg)
+      } else {
+        console.log(res.errMsg)
+      }
+    }, err => {
+      console.log(err)
+    })
+
     this.setData({
       list: list,
-      district: [
-        [{ id: 1, name: 'aa' }, { id: 2, name: 'ab' }],
-        [{ id: 3, name: 'bb' }, { id: 4, name: 'ba' }],
-      ],
+      // district: [
+      //   [{ id: 1, name: 'aa' }, { id: 2, name: 'ab' }],
+      //   [{ id: 3, name: 'bb' }, { id: 4, name: 'ba' }],
+      // ],
       type: options.type
     })
+    console.log(this.data.district)
   },
 
   /**

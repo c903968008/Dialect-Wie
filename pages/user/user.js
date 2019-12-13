@@ -1,5 +1,6 @@
 // pages/user/user.js
 const app = getApp()
+import api from '../../utils/wxRequest.js';
 Page({
 
   /**
@@ -16,6 +17,22 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo,
       hasUserInfo: true
+    })
+
+    api.wxRequest.get('/user/count', res => {
+      if(res.code == 200) {
+        // console.log(res.data)
+        this.setData({
+          count : res.data
+        })
+        // console.log(this.data)
+      } else if(res.code == 500){
+        console.log(res.msg)
+      } else{
+        console.log(res.errMsg)
+      }
+    },err => {
+      console.log(err)
     })
   },
 

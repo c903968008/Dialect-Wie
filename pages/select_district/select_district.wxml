@@ -15,7 +15,7 @@
     <view class="cu-list bg-white district-list padding-top padding-left">
       <view class="cu-item">
         <block wx:for="{{district}}" wx:for-index="districtId" wx:key>
-          <view wx:if="{{listId == districtId}}">
+          <view wx:if="{{list[listId] == districtId}}">
             <block wx:for="{{district[districtId]}}" wx:for-index="disId" wx:key>
               <view class="cu-tag round margin-bottom" bindtap="select" data-index="{{district[districtId][disId].id}}">{{district[districtId][disId].name}}</view>
             </block>
