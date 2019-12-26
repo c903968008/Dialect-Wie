@@ -31,7 +31,7 @@ const wxRequest =  {
       url: baseUrl + url,
       data: data || '',
       header: {
-        'Authorization': 'Bearer' + token
+        'Authorization': 'Bearer ' + token
       },
       method: 'GET',
       dataType: 'json',
@@ -70,7 +70,7 @@ const wxRequest =  {
       url: baseUrl + url,
       data: data || '',
       header: {
-        'Authorization': 'Bearer' + token
+        'Authorization': 'Bearer ' + token
       },
       method: 'POST',
       dataType: 'json',

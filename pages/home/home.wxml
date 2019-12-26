@@ -33,8 +33,11 @@
     <navigator open-type="navigate" hover-class='none' url="/pages/select_district/select_district?type=learn" class="nav-li bg-olive learn">
       <view class="nav-title">学方言</view>
     </navigator>
-    <navigator open-type="navigate" hover-class='none' url="/pages/get_certificate/certificate" class="nav-li bg-red certificate">
+    <!-- <navigator open-type="navigate" hover-class='none' url="/pages/get_certificate/certificate" class="nav-li bg-red certificate">
       <view class="nav-title">考证</view>
+    </navigator> -->
+    <navigator open-type="navigate" hover-class='none' url="/pages/my_certificate/certificate" class="nav-li bg-red certificate">
+      <view class="nav-title">我的证书</view>
     </navigator>
     <navigator open-type="navigate" hover-class='none' url="/pages/rank/rank" class="nav-li bg-purple rank">
       <view class="nav-title">排行榜</view>
