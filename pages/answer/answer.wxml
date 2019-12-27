@@ -34,7 +34,10 @@
     <view class="cu-item">
       <form>
         <view class="cu-form-group">
-          <textarea maxlength="-1" bindinput="textareaAInput" placeholder="请输入反馈信息" style="height:80px;"></textarea>
+          <textarea maxlength="-1" bindinput="textareaAInput" placeholder="请输入反馈信息" style="height:50px;"></textarea>
+        </view>
+        <view class="cu-form-group">
+          <input placeholder="请输入您认为的正确答案"></input>
         </view>
       </form>
     </view>

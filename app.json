@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/answer/answer",
     "pages/home/home",
     "pages/user/user",
     "pages/notice/notice",
@@ -7,7 +8,6 @@
     "pages/my_feedback/feedback",
     "pages/my_question/question",
     "pages/feedback/feedback",
-    "pages/answer/answer",
     "pages/learn/learn",
     "pages/index/index",
     "pages/test/test",

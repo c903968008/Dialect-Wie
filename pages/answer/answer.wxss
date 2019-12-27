@@ -20,5 +20,5 @@ image{
   margin-left: 620rpx;
 }
 .feedback-card{
-  margin-top: 40px;
+  margin-top: 15px;
 }
