@@ -2,20 +2,22 @@
 <view class="cu-card article">
   <view class="cu-item shadow">
     <view class="title">
-      <view class="cuIcon-playfill text-green play"></view>
-      <view class="cu-progress round xs striped active progress">
+      <audio src="{{question.audio}}" id="{{question.audioID}}"></audio>
+      <view wx:if="{{question.audioAction}}" class="cuIcon-playfill text-green play" bindtap='play' data-id='{{question.id}}' data-index='{{index}}'></view>
+      <view wx:else class="cuIcon-stop text-green play" bindtap='pause' data-id='{{question.id}}' data-index='{{index}}'></view>
+      <!-- <view class="cu-progress round xs striped active progress">
         <view class="bg-orange" style="width:60%"></view>
-      </view>
+      </view> -->
     </view>
     <view class="content">
       <view class="grid col-2 margin-bottom text-center">
-        <view class="text-lg text-green padding-xs answer">{{question.dialect}}</view>
-        <block wx:for="{{question.wrong}}" wx:for-item="wrong" wx:key>
-        <view class="text-df padding-xs answer">{{wrong}}</view>
+        <view class="text-lg text-green padding-xs answer">{{question.dialect.translation}}</view>
+        <block wx:for="{{question.wrongArr}}" wx:for-item="wrong" wx:key>
+          <view class="text-df padding-xs answer">{{wrong}}</view>
         </block>
         <view class=" margin-top-xs">
-          <view class="cu-tag bg-red light sm round">{{question.difficult}}</view>
-          <view class="cu-tag bg-green light sm round">{{question.district}}</view>
+          <view class="cu-tag bg-red light sm round">{{question.difficulty}}</view>
+          <view class="cu-tag bg-green light sm round">{{question.district.name}}</view>
         </view>
       </view>
     </view>

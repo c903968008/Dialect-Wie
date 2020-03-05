@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -15,7 +15,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.9.3",
 	"appid": "wxe0ee89f87e7f1c96",
-	"projectname": "dialect",
+	"projectname": "Dialect-Wei",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

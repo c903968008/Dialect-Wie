@@ -4,7 +4,7 @@ page{
 .top{
   margin: 20rpx;
   border-radius: 20rpx;
-  height: 160px;
+  height: 180px;
   position:relative;
   padding-top: 20px; 
 }

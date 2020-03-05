@@ -77,5 +77,6 @@ App({
   },
   globalData: {
     userInfo: null,
+    baseUrl: "http://127.0.0.1:8089",
   }
 })

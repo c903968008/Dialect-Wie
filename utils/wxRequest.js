@@ -1,4 +1,4 @@
-const baseUrl = 'http://8.8.8.3:8089';
+const baseUrl = 'http://127.0.0.1:8089';
 
 var token = '';
 
