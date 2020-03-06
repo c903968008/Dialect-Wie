@@ -2,6 +2,7 @@
   "pages": [
     "pages/user/user",
     "pages/my_feedback/feedback",
+    "pages/rank/rank",
     "pages/home/home",
     "pages/my_certificate/certificate",
     "pages/my_question/question",
@@ -15,7 +16,6 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/get_certificate/certificate",
-    "pages/rank/rank",
     "pages/select_district/select_district"
   ],
   "window": {
