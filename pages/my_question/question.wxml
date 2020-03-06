@@ -21,7 +21,7 @@
         </view>
       </view>
     </view>
-    <view class="bg-green light padding-xs margin-xs text-center round shadow shadow-warp btn text-xs" bindtap="edit">编辑</view>
+    <view class="bg-green light padding-xs margin-xs text-center round shadow shadow-warp btn text-xs" bindtap="edit" data-id='{{question.id}}'>修改</view>
   </view>
 </view>
 </block>

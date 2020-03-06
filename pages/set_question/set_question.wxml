@@ -1,39 +1,47 @@
 <view class="cu-card">
   <view class="cu-item item">
-    <form>
+    <form bindsubmit="formSubmit">
       <view class="cu-form-group margin-top">
-        <view class="title">地址选择</view>
-        <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="title">所属省</view>
+        <picker bindchange="provinceChange" value="{{index}}" range-key="{{'name'}}" range="{{provincePicker}}">
           <view class="picker">
-            {{region[0]}}，{{region[1]}}，{{region[2]}}
+            {{provincePicker[provinceIndex].name}}
           </view>
         </picker>
       </view>
-      <radio-group class="block">
-        <view class="cu-form-group">
-          <view class="title">难度</view>
-          <view>
-            <radio class="green margin-right-sm" checked="true"></radio>{{difficult[0]}}
-            <radio class="green margin-left-sm margin-right-sm"></radio>{{difficult[1]}}
-            <radio class="green margin-left-sm margin-right-sm"></radio>{{difficult[2]}}
+      <view class="cu-form-group margin-top">
+        <view class="title">所属市</view>
+        <picker bindchange="cityChange" value="{{index}}" range-key="{{'name'}}" range="{{cityPicker}}">
+          <view class="picker">
+            {{cityPicker[cityIndex].name}}
           </view>
+        </picker>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">难度</view>
+        <view>
+          <block wx:for="{{difficult}}" wx:for-item="difficult" wx:key>
+            <button bindtap='diff' data-index='{{index}}' class="cu-btn round margin-right-sm" style='color:{{difficult.color}}'>
+              {{difficult.name}}
+            </button>
+          </block>
         </view>
-      </radio-group>
+      </view>
       <view class="cu-form-group">
         <view class="title">正确选项</view>
-        <input placeholder="请输入方言的正确翻译"></input>
+        <input name='dialect' value='{{temp.right}}' placeholder="请输入方言的正确翻译"></input>
       </view>
       <view class="cu-form-group">
         <view class="title">错误选项1</view>
-        <input placeholder="请输入错误选项"></input>
+        <input name="wrong1" value='{{temp.wrong1}}' placeholder="请输入错误选项"></input>
       </view>
       <view class="cu-form-group">
         <view class="title">错误选项2</view>
-        <input placeholder="请输入错误选项"></input>
+        <input name="wrong2" value='{{temp.wrong2}}' placeholder="请输入错误选项"></input>
       </view>
       <view class="cu-form-group">
         <view class="title">错误选项3</view>
-        <input placeholder="请输入错误选项"></input>
+        <input name="wrong3" value='{{temp.wrong3}}' placeholder="请输入错误选项"></input>
       </view>
       <view class="cu-form-group">
         <view class="cu-bar input audit">
@@ -46,11 +54,9 @@
     bindlongpress="recordLongPress">{{recordStatus}}</button>
         </view>
       </view>
-
+      <view class="cu-bar btn-group margin-top-lg">
+        <button class="cu-btn bg-green text-lg shadow-blur round submit" formType="submit">提交</button>
+      </view>
     </form>
-  </view>
-  
-  <view class="cu-bar btn-group margin-top-lg">
-    <button class="cu-btn bg-green text-lg shadow-blur round submit">提交</button>
   </view>
 </view>

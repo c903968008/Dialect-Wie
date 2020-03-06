@@ -10,9 +10,10 @@ Page({
     question: []
   },
 
-  edit(){
+  edit(e){
+    // console.log(e)
     wx.navigateTo({
-      url: '/pages/set_question/set_question',
+      url: '/pages/set_question/set_question?type=edit&id=' + e.target.dataset.id,
     })
   },
 
@@ -48,7 +49,7 @@ Page({
   onLoad: function (options) {
     api.wxRequest.get('/question/user/list', res => {
       if (res.code == 200) {
-        console.log(res.data)
+        // console.log(res.data)
         res.data.forEach(function(item,index){
           item.audio = app.globalData.baseUrl + `/dialect/` + item.audio
           item.audioAction = true;
@@ -65,7 +66,7 @@ Page({
         this.setData({
           question: res.data
         })
-        console.log(this.data.question)
+        // console.log(this.data.question)
       } else if (res.code == 500) {
         console.log(res.msg)
       } else {
@@ -87,7 +88,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];
+    console.log(currPage.__data__.type);
+    if (currPage.__data__.type == 'edit'){
+      this.onLoad();
+    }
   },
 
   /**

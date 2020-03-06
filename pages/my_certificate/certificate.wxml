@@ -2,10 +2,16 @@
 <view class="cu-card article {{isCard?'no-card':''}}">
   <view class="cu-item shadow">
     <view class="title">
-      <view class="text-cut">{{item.name}}</view>
+      <view class="text-cut text-xl text-center text-black">{{item.name}}</view>
     </view>
     <view class="content">
-      <image src="{{item.image}}" mode="aspectFit"></image>
+        <view class=" margin-bottom-xs">
+          <view class="cu-tag bg-red light round margin-right">{{item.district.name}}</view>
+          <view class="cu-tag bg-green light round margin-right">{{item.rank}}级</view>
+          <!-- <view class="text-cut text-sm text-grey" style='float:right;margin-left:200rpx;margin-top:10rpx'>{{item.time}}</view> -->
+        </view>
+    </view>
+    <view class="content">
       <view class="desc">
         <view class="text-content">{{item.description}}</view>
       </view>

@@ -25,7 +25,7 @@
     <navigator open-type="navigate" hover-class='none' url="/pages/select_district/select_district?type=answer" class="nav-li bg-orange answer">
       <view class="nav-title">答题</view>
     </navigator>
-    <navigator open-type="navigate" hover-class='none' url="/pages/set_question/set_question" class="nav-li bg-cyan question">
+    <navigator open-type="navigate" hover-class='none' url="/pages/set_question/set_question?type=create" class="nav-li bg-cyan question">
       <view class="nav-title">出题</view>
     </navigator>
   </view>
