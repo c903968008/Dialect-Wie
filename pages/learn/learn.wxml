@@ -1,6 +1,6 @@
 <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
   <view class="search-form round padding-left-lg">
-    <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
+    <input type="text" bindinput='getSearchValue' placeholder="输入搜索的关键词" confirm-type="search"></input>
   </view>
   <view class="action">
     <text class="cuIcon-search" bindtap="search"></text>
@@ -8,8 +8,10 @@
 </view>
 
 <view class="cu-list grid col-{{gridCol}} no-border">
-  <view class="cu-item" wx:for="{{iconList}}" wx:key>
-    <view class="cuIcon-notification text-{{item.color}}"></view>
-    <text>{{item.name}}</text>
+  <view class="cu-item" wx:for="{{dialect}}" wx:key>
+  <audio src="{{item.audio}}" id="{{item.audioID}}" bindended="end" data-id='{{item.id}}' data-index='{{index}}'></audio>
+      <view wx:if="{{item.audioAction}}" class="cuIcon-notification text-{{item.color}}" bindtap='play' data-id='{{item.id}}' data-index='{{index}}'></view>
+      <view wx:else class="cuIcon-stop text-{{item.color}}" bindtap='pause' data-id='{{item.id}}' data-index='{{index}}'></view>
+    <text>{{item.translation}}</text>
   </view>
 </view>

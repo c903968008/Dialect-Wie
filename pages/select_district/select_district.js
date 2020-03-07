@@ -44,9 +44,9 @@ Page({
             keys.push(i)
           }
         }
-        console.log(keys)
+        // console.log(keys)
         let ll = list.filter(function (val) { return keys.indexOf(val) > -1 })
-        console.log(ll)
+        // console.log(ll)
         this.setData({
           district: res.data,
           list: ll
@@ -72,7 +72,7 @@ Page({
       })
     } else if (this.data.type == 'learn'){
       wx.navigateTo({
-        url: '/pages/learn/learn',
+        url: '/pages/learn/learn?district_id=' + id,
       })
     }
     
@@ -100,9 +100,9 @@ Page({
             keys.push(i)
           }
         }
-        console.log(keys)
+        // console.log(keys)
         let ll = list.filter(function (val) { return keys.indexOf(val) > -1 })
-        console.log(ll)
+        // console.log(ll)
         this.setData({
           district: res.data,
           list: ll
