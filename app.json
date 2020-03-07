@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/user/user",
     "pages/my_feedback/feedback",
     "pages/rank/rank",
-    "pages/home/home",
     "pages/my_certificate/certificate",
     "pages/my_question/question",
     "pages/set_question/set_question",

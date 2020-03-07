@@ -12,7 +12,7 @@ Page({
     provinceIndex: 0,
     provincePicker: [],
     cityIndex: 0,
-    cityPicker: [],
+    cityPicker: [{name:'未选择'}],
     difficult: [{
       name: '初级',
       color: 'green'
@@ -37,7 +37,7 @@ Page({
   },
 
   formSubmit: function(e) {
-    // console.log(this.data.temp)
+    console.log('temp:',this.data.temp)
     // console.log('form发生了submit事件，携带数据为：', e.detail.value)
     var that = this
     var temp = this.data.temp
@@ -58,13 +58,13 @@ Page({
       })
     } else {
       if (that.data.type == 'create'){
-        var param = {
+        var param1 = {
           district_id: district_id,
           difficulty: temp.difficulty,
           dialect: value.dialect,
           wrong: wrong
         }
-        api.wxRequest.post('/question/create', param, res => {
+        api.wxRequest.post('/question/create', param1, res => {
           if (res.code == 200) {
             // console.log(res)
             var id = res.data.id
@@ -96,12 +96,14 @@ Page({
           dialect: value.dialect,
           wrong: wrong
         }
+        console.log(param)
+        console.log(district_id)
         api.wxRequest.post('/question/edit', param, res => {
           if (res.code == 200) {
             // console.log(res)
             var id = res.data.id
             var dialect_id = res.data.dialect_id
-            that.uploadAudio(id, dialect_id)
+            that.uploadAudioEdit(id, dialect_id)    //上传录音
             wx.showToast({
               title: '提交成功',
               icon: 'success',
@@ -131,13 +133,46 @@ Page({
 
   },
 
-  //上传录音
+  //上传录音创建
   uploadAudio(id, dialect_id){
     var that = this
     var token = wx.getStorageSync('token')
     if (that.data.tempFilePath != ''){
       wx.uploadFile({
-        url: app.globalData.baseUrl + '/question/audio/upload',
+        url: app.globalData.baseUrl + '/question/audio/upload/create',
+        filePath: that.data.tempFilePath,
+        name: 'audio',
+        header: {
+          "Content-Type": "multipart/form-data",
+          'Authorization': 'Bearer ' + token
+        },
+        formData: {
+          id: id,
+          dialect_id: dialect_id,
+        },
+        success: function (res) {
+          // console.log(res)
+        },
+        fail: function (res) {
+          console.log(res)
+          wx.showToast({
+            title: '请录音',
+            icon: 'none',
+            duration: 2000
+          })
+        },
+        complete: function (res) { console.log(res) },
+      })
+    }
+  },
+
+  //上传录音修改
+  uploadAudioEdit(id, dialect_id) {
+    var that = this
+    var token = wx.getStorageSync('token')
+    if (that.data.tempFilePath != '') {
+      wx.uploadFile({
+        url: app.globalData.baseUrl + '/question/audio/upload/edit',
         filePath: that.data.tempFilePath,
         name: 'audio',
         header: {
@@ -167,13 +202,16 @@ Page({
   //选择省、获取市
   provinceChange(e) {
     var temp = 'temp.province'
+    var temp1 = 'temp.city'
     var index = e.detail.value
     var id = this.data.provincePicker[index].id
     this.setData({
       provinceIndex: index,
-      [temp]: id
+      cityIndex: 0,
+      [temp]: id,
+      [temp1]: 0
     })
-    // console.log(this.data.temp)
+    console.log('province:',this.data.temp.province)
     this.getCity(id)
   },
 
@@ -186,6 +224,7 @@ Page({
       cityIndex: index,
       [temp]: id
     })
+    console.log('city:', this.data.temp.city)
   },
 
   //选择难度

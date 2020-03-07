@@ -7,12 +7,59 @@ Page({
    * 页面的初始数据
    */
   data: {
+    list: [],
+    district: [],
+    type: '',
+    search: '',
+  },
 
+  //搜索内容
+  getSearchValue(e){
+    // console.log(e.detail)
+    this.setData({
+      search: e.detail.value
+    })
+    // console.log('search:',this.data.search)
   },
 
   //搜索
   search(e) {
+    // console.log('1111:', this.data.search)
+    var param = {
+      search: {
+        name: this.data.search
+      }
+    }
 
+    let list = [];
+    for (let i = 0; i < 26; i++) {
+      list[i] = String.fromCharCode(65 + i)
+    }
+    var keys = []
+    api.wxRequest.get('/district/list',param, res => {
+      if (res.code == 200) {
+        // console.log(res.data)
+        for (let i in res.data) {
+          if (res.data.hasOwnProperty(i)) {
+            keys.push(i)
+          }
+        }
+        console.log(keys)
+        let ll = list.filter(function (val) { return keys.indexOf(val) > -1 })
+        console.log(ll)
+        this.setData({
+          district: res.data,
+          list: ll
+        })
+        // console.log(this.data)
+      } else if (res.code == 500) {
+        console.log(res.msg)
+      } else {
+        console.log(res.errMsg)
+      }
+    }, err => {
+      console.log(err)
+    })
   },
 
   //点击地址跳转
@@ -35,20 +82,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options){
-    console.log(options.type)
+    // console.log(options.type)
+    this.setData({
+      type: options.type
+    })
     let list = [];
     for (let i = 0; i < 26; i++) {
       list[i] = String.fromCharCode(65 + i)
     }
-
+    // this.getList({})
+    var keys = []
     api.wxRequest.get('/district/list', res => {
       if (res.code == 200) {
-        console.log(res.data)
+        // console.log(res.data)
+        for (let i in res.data){
+          if (res.data.hasOwnProperty(i)){
+            keys.push(i)
+          }
+        }
+        console.log(keys)
+        let ll = list.filter(function (val) { return keys.indexOf(val) > -1 })
+        console.log(ll)
         this.setData({
           district: res.data,
+          list: ll
         })
         // console.log(this.data)
-      } else if(res.code == 500){
+      } else if (res.code == 500) {
         console.log(res.msg)
       } else {
         console.log(res.errMsg)
@@ -57,15 +117,9 @@ Page({
       console.log(err)
     })
 
-    this.setData({
-      list: list,
-      // district: [
-      //   [{ id: 1, name: 'aa' }, { id: 2, name: 'ab' }],
-      //   [{ id: 3, name: 'bb' }, { id: 4, name: 'ba' }],
-      // ],
-      type: options.type
-    })
-    console.log(this.data.district)
+    // console.log('list:',list)
+    // console.log('district:',this.data.district)
+    
   },
 
   /**

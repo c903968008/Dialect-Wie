@@ -16,19 +16,48 @@ Page({
   tabSelect(e) {
     // console.log(e.currentTarget.dataset.id)
     this.getFeedback(e.currentTarget.dataset.id)
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id - 1) * 60
+    })
   },
 
-  toDetail(){
-    wx.navigateTo({
-      url: '/pages/feedback/feedback',
-    })
+  //查看
+  toDetail(e){
+    // console.log(e.target.dataset.feedback)
+    if (e.target.dataset.feedback.status == 0){
+      var param = {
+        id: e.target.dataset.feedback.id,
+        status: 1,
+      }
+      api.wxRequest.post('/feedback/status', param, res => {
+        if (res.code == 200) {
+          wx.navigateTo({
+            url: '/pages/feedback/feedback?feedback=' + JSON.stringify(e.target.dataset.feedback),
+          })
+        } else {
+          console.log(res.msg)
+        }
+      }, err => {
+        console.log(err)
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/feedback/feedback?feedback=' + JSON.stringify(e.target.dataset.feedback),
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getFeedback(0)
+    console.log('options:',options.status)
+    if (options.status == undefined){
+      this.getFeedback(0)
+    } else {
+      this.getFeedback(options.status)
+    }
   },
 
   //获取反馈列表
@@ -69,7 +98,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];
+    console.log('type:',currPage.__data__.type);
+    if (currPage.__data__.type == 'accept') {
+      this.onLoad({ status: currPage.__data__.status});
+    }
   },
 
   /**

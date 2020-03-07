@@ -43,6 +43,15 @@ Page({
     })
   },
 
+  //播放结束
+  end(e) {
+    var index = e.target.dataset.index
+    var data = 'question[' + index + '].audioAction'
+    this.setData({
+      [data]: true
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -90,7 +99,7 @@ Page({
   onShow: function () {
     var pages = getCurrentPages();
     var currPage = pages[pages.length - 1];
-    console.log(currPage.__data__.type);
+    // console.log(currPage.__data__.type);
     if (currPage.__data__.type == 'edit'){
       this.onLoad();
     }
