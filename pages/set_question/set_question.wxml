@@ -21,7 +21,7 @@
         <view class="title">难度</view>
         <view>
           <block wx:for="{{difficult}}" wx:for-item="difficult" wx:key>
-            <button bindtap='diff' data-index='{{index}}' class="cu-btn round margin-right-sm" style='color:{{difficult.color}}'>
+            <button bindtap='diff' data-index='{{index}}' class="cu-btn round" style='color:{{difficult.color}};width:130rpx;margin-right:10rpx'>
               {{difficult.name}}
             </button>
           </block>

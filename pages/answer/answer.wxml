@@ -2,47 +2,64 @@
 <view class="cu-card article">
   <view class="cu-item shadow">
     <view class="title">
-      <view class="cuIcon-playfill text-green play"></view>
-      <view class="cu-progress round xs striped active progress">
-        <view class="bg-orange" style="width:60%"></view>
-      </view>
+      <audio src="{{question.audio}}" id="myaudio" bindended="end" data-id='{{question.id}}'></audio>
+      <view wx:if="{{question.audioAction}}" class="cuIcon-playfill text-green play" bindtap='play' data-id='{{question.id}}'></view>
+      <view wx:else class="cuIcon-stop text-green play" bindtap='pause' data-id='{{question.id}}'></view>
     </view>
     <view class="content">
       <view class="grid col-1 margin-bottom margin-left-xl text-left">
-        <view class="margin-xs">
-          <view class="cu-tag bg-red light sm round">初级</view>
-          <view class="cu-tag bg-green light sm round">四川</view>
+        <view class="margin-xs margin-bottom">
+          <view class="cu-tag bg-red light sm round">{{question.district.name}}</view>
+          <view class="cu-tag bg-green light sm round">{{question.difficulty}}</view>
         </view>
         <!-- 如果答错标红，如果答对标绿 -->
-        <view class="text-lg padding-xs answer">A. 方言一</view>
-        <view class="text-lg padding-xs answer">B. 方言一</view>
-        <view class="text-lg padding-xs answer">C. 方言一</view>
-        <view class="text-lg padding-xs answer">D. 方言一</view>
-        
+        <block wx:for="{{question.options}}" wx:key>
+        <view class="text-lg padding-xs margin-bottom-sm {{item.color=='blue'?'light':''}} radius shadow bg-{{item.color}} answer" bindtap='answer' disable data-result='{{item.value}}' data-index='{{index}}'>{{chars[index]}}. {{item.value}}</view>
+        </block>
       </view>
     </view>
   </view>
 </view>
 
-<view class="cu-bar btn-group">
-  <button class="cu-btn bg-green light shadow round">上一题</button>
-  <button class="cu-btn bg-blue light shadow round">下一题</button>
+<view wx:if="{{answered}}" class="cu-bar btn-group">
+  <!-- <button wx:if="{{index!=0}}" class="cu-btn bg-green light shadow round">上一题</button> -->
+  <button wx:if="{{index!=length-1}}" class="cu-btn bg-green light shadow round" bindtap='next'>下一题</button>
+  <button wx:else class="cu-btn bg-green light shadow round" bindtap='complete'>完成</button>
 </view>
 
 <view hidden="{{hidden}}">
   <view class="cu-card feedback-card">
     <view class="cu-item">
-      <form>
+      <form bindsubmit="formSubmit">
         <view class="cu-form-group">
-          <textarea maxlength="-1" bindinput="textareaAInput" placeholder="请输入反馈信息" style="height:50px;"></textarea>
+          <textarea maxlength="-1" bindinput="contentInput" placeholder="请输入反馈信息" style="height:50px;"></textarea>
         </view>
         <view class="cu-form-group">
-          <input placeholder="请输入您认为的正确答案"></input>
+          <input bindinput="translationInput" placeholder="请输入您认为的正确答案"></input>
         </view>
       </form>
     </view>
   </view>
-  <view class="padding-xs text-center radius shadow bg-cyan light submit">提交</view>
+  <view class="padding-xs text-center radius shadow bg-cyan light submit" bindtap="feedbackSubmit">提交</view>
+</view>
+
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">答题情况</view>
+    </view>
+    <view class="padding-xs margin-top-xs">
+      答题总数:  {{length}}
+    </view>
+    <view class="padding-xs  margin-bottom-xs">
+      正确答题数： {{right}}
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn bg-green margin-left" bindtap="showAnswer">确定</button>
+      </view>
+    </view>
+  </view>
 </view>
 
 <view class="cu-bar foot flex bg-white">

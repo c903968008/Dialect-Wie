@@ -1,18 +1,35 @@
 // pages/notice/notice.js
+const app = getApp()
+import api from '../../utils/wxRequest.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    notice: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // console.log(options.id)
+    let param = {
+      id: options.id
+    }
+    api.wxRequest.get('/notice/show',param, res => {
+      if (res.code == 200) {
+        this.setData({
+          notice: res.data
+        })
+        console.log(this.data.notice)
+      } else {
+        console.log(res.errMsg)
+      }
+    }, err => {
+      console.log(err)
+    })
   },
 
   /**

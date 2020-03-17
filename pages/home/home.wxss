@@ -4,7 +4,8 @@ page{
 .top{
   margin: 20rpx;
   border-radius: 20rpx;
-  height: 180px;
+  /* height: 200px; */
+  /* height: 60%; */
   position:relative;
   padding-top: 20px; 
 }
@@ -38,7 +39,7 @@ page{
 
 .model{
   margin: 30px 20rpx 0px;
-  height: 300px;
+  height: 400px;
 }
 .model .left{
   width: 50%;

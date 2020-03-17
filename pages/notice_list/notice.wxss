@@ -1,3 +1,13 @@
 .time{
   /* margin-left: 150rpx; */
 }
+.ar-content {
+  height: 150px;
+  text-align: center;
+}
+image{
+  height: 100%;
+}
+.tit{
+  float: left
+}

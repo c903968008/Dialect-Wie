@@ -5,9 +5,6 @@
       <audio src="{{question.audio}}" id="{{question.audioID}}" bindended="end" data-id='{{question.id}}' data-index='{{index}}'></audio>
       <view wx:if="{{question.audioAction}}" class="cuIcon-playfill text-green play" bindtap='play' data-id='{{question.id}}' data-index='{{index}}'></view>
       <view wx:else class="cuIcon-stop text-green play" bindtap='pause' data-id='{{question.id}}' data-index='{{index}}'></view>
-      <!-- <view class="cu-progress round xs striped active progress">
-        <view class="bg-orange" style="width:60%"></view>
-      </view> -->
     </view>
     <view class="content">
       <view class="grid col-2 margin-bottom text-center">

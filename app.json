@@ -1,6 +1,10 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/answer/answer",
+    "pages/notice/notice",
+    "pages/notice_list/notice",
+    "pages/set_question/set_question",
     "pages/select_district/select_district",
     "pages/learn/learn",
     "pages/user/user",
@@ -8,11 +12,7 @@
     "pages/rank/rank",
     "pages/my_certificate/certificate",
     "pages/my_question/question",
-    "pages/set_question/set_question",
     "pages/test/test",
-    "pages/answer/answer",
-    "pages/notice/notice",
-    "pages/notice_list/notice",
     "pages/feedback/feedback",
     "pages/index/index",
     "pages/logs/logs",

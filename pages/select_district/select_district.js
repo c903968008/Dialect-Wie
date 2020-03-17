@@ -68,7 +68,7 @@ Page({
     // console.log(e.target.dataset)
     if(this.data.type == 'answer'){
       wx.navigateTo({
-        url: '/pages/answer/answer',
+        url: '/pages/answer/answer?district_id=' + id,
       })
     } else if (this.data.type == 'learn'){
       wx.navigateTo({
@@ -92,7 +92,10 @@ Page({
     }
     // this.getList({})
     var keys = []
-    api.wxRequest.get('/district/list', res => {
+    var param = {
+      type: options.type
+    }
+    api.wxRequest.get('/district/list',param, res => {
       if (res.code == 200) {
         // console.log(res.data)
         for (let i in res.data){
