@@ -26,6 +26,7 @@ Page({
   search(e) {
     // console.log('1111:', this.data.search)
     var param = {
+      type: this.data.type,
       search: {
         name: this.data.search
       }

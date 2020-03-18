@@ -4,22 +4,22 @@
   </view>
 </scroll-view>
 
-<view>
+<!-- <view>
   <image class="banner" src="/images/banner.png" mode="scaleToFill"></image>
   <text class="text-white text-lg img-text">你与大神的差距有多少？快快来围观~</text>
-</view>
+</view> -->
 
 <swiper class="swiper" current="{{currentPage}}" bindchange="turnTitle" style="height:520px;">
     <!-- 正确率 -->
     <swiper-item id="uncomPage">
       <view class="cu-card table">
         <view class="cu-item shadow-blur item">
-          <scroll-view scroll-y="true" style="height: 420px;">
+          <scroll-view scroll-y="true" style="height: 450px;">
             <block wx:for="{{user}}" wx:key="{{code}}">
               <view class="flex p-xs mb-sm info solid-bottom">
                 <view class="flex-sub margin-xs text-orange text-center flex-item">{{index + 1}}</view>
                 <view class="flex-treble margin-xs flex-item ">
-                  <view class="cu-avatar round avatar margin-right" style="background-image:url(/images/avatar.jpg);"></view>{{item.nickName}}
+                  <view class="cu-avatar round avatar margin-right" style="background-image:url({{item.avatarUrl}});"></view>{{item.nickName}}
                 </view>
                 <view class="flex-twice margin-xs text-center flex-item">{{item.accuracy}}%</view>
               </view>
@@ -34,12 +34,12 @@
     <swiper-item id="comPage">
        <view class="cu-card table">
         <view class="cu-item shadow-blur item">
-          <scroll-view scroll-y="true" style="height: 420px;">
+          <scroll-view scroll-y="true" style="height: 450px;">
             <block wx:for="{{user}}" wx:key="{{code}}">
               <view class="flex p-xs mb-sm info solid-bottom">
                 <view class="flex-sub margin-xs text-orange text-center flex-item">{{index + 1}}</view>
                 <view class="flex-treble margin-xs flex-item ">
-                  <view class="cu-avatar round avatar margin-right" style="background-image:url(/images/avatar.jpg);"></view>{{item.nickName}}
+                  <view class="cu-avatar round avatar margin-right" style="background-image:url({{item.avatarUrl}});"></view>{{item.nickName}}
                 </view>
                 <view class="flex-twice margin-xs text-center flex-item">{{item.total}}</view>
               </view>

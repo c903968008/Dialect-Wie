@@ -54,6 +54,12 @@
     <view class="padding-xs  margin-bottom-xs">
       正确答题数： {{right}}
     </view>
+    <view class="padding-xs  margin-bottom-xs">
+      获得证书: 
+      <block wx:for="{{certificate}}">
+        <span>{{item.name + "  "}}</span>
+      </block>
+    </view>
     <view class="cu-bar bg-white justify-end">
       <view class="action">
         <button class="cu-btn bg-green margin-left" bindtap="showAnswer">确定</button>

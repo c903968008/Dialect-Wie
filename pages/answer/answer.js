@@ -173,12 +173,15 @@ Page({
       district_id: this.data.district_id,
       right: this.data.right, 
       right_ids: this.data.right_ids,
-      total_ids: this.data.total_ids
+      total_ids: this.data.total_ids,
+      total: this.data.length
     }
     api.wxRequest.post('/question/answer', param, res => {
       if (res.code == 200){
+        console.log(res.data)
         this.setData({
-          modalName: 'Modal'
+          modalName: 'Modal',
+          certificate: res.data
         })
       } else {
         console.log(res.msg)
@@ -192,7 +195,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    options.district_id = 1
     var that = this
     this.setData({
       district_id: options.district_id

@@ -1,17 +1,17 @@
 const baseUrl = 'http://127.0.0.1:8000';
 // const baseUrl = 'http://39.108.74.208:8000';
-// var token = '';
+var token = '';
 
-// wx.getStorage({
-//   key: 'token',
-//   success(res) {
-//     // console.log(res.data)
-//     token = res.data
-//     // console.log(token)
-//   }
-// });
+wx.getStorage({
+  key: 'token',
+  success(res) {
+    // console.log(res.data)
+    token = res.data
+    // console.log(token)
+  }
+});
 
-var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA4OVwvbG9naW4iLCJpYXQiOjE1ODQzNDA2MjAsImV4cCI6MTU4OTUyNDYyMCwibmJmIjoxNTg0MzQwNjIwLCJqdGkiOiJpRGVLZTJ2dkpYS3dCYTVzIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.JBA4Ummvo_1DrABORHrKbpRzmSV1CWJHlt60ybasjeM'
+// var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA4OVwvbG9naW4iLCJpYXQiOjE1ODQzNDA2MjAsImV4cCI6MTU4OTUyNDYyMCwibmJmIjoxNTg0MzQwNjIwLCJqdGkiOiJpRGVLZTJ2dkpYS3dCYTVzIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.JBA4Ummvo_1DrABORHrKbpRzmSV1CWJHlt60ybasjeM'
 
 const wxRequest =  {
   /**

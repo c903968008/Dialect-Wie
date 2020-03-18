@@ -37,17 +37,20 @@ Page({
   },
 
   formSubmit: function(e) {
-    console.log('temp:',this.data.temp)
+    // console.log('temp:',this.data.temp)
     // console.log('form发生了submit事件，携带数据为：', e.detail.value)
     var that = this
     var temp = this.data.temp
     var value = e.detail.value
     var district_id = 0
-    if (temp.city == 0){
+    if(temp.city == 0 && temp.province == 0){
+      district_id = this.data.provincePicker[this.data.provinceIndex].id
+    } else if (temp.city == 0 || temp.city == undefined){
       district_id = temp.province
     } else {
       district_id = temp.city
     }
+    // console.log(district_id)
     var wrong = value.wrong1 + ',' + value.wrong2 + ',' + value.wrong3
     
     if (value.dialect == '' || value.wrong1 == '' || value.wrong2 == '' || value.wrong3 == ''){
@@ -76,8 +79,8 @@ Page({
               duration: 2000,
               success: function (res) {
                 setTimeout(function(){
-                  wx.redirectTo({
-                    url: '/pages/home/home',
+                  wx.navigateBack({
+                    delta: 1
                   });
                 },2000)
               },
@@ -100,7 +103,7 @@ Page({
         console.log(district_id)
         api.wxRequest.post('/question/edit', param, res => {
           if (res.code == 200) {
-            // console.log(res)
+            console.log(res)
             var id = res.data.id
             var dialect_id = res.data.dialect_id
             that.uploadAudioEdit(id, dialect_id)    //上传录音
@@ -302,7 +305,7 @@ Page({
     this.getProvince()
     this.setData({
       type: options.type,
-      id: options.id
+      id: options.id,
     })
     if(options.type == 'edit') {
       //id信息

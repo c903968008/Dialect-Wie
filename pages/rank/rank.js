@@ -18,8 +18,9 @@ Page({
     this.setData({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60,
-      currentPage: e.currentTarget.dataset.index
+      currentPage: e.currentTarget.dataset.id
     })
+    console.log(this.data.currentPage)
     if (e.currentTarget.dataset.id == 0){
       this.getList('right')
     } else if (e.currentTarget.dataset.id == 1) {
